@@ -24,9 +24,9 @@ class PetsController < ApplicationController
     erb :'/pets/show'
   end
 
-  get '/petss/:id/edit' do
+  get '/pets/:id/edit' do
     @pets = Pet.find(params[:id])
-    erb :'/petss/edit'
+    erb :'/pets/edit'
   end
 
   patch '/pets/:id' do

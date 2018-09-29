@@ -24,6 +24,11 @@ class PetsController < ApplicationController
     erb :'/pets/show'
   end
 
+  get '/petss/:id/edit' do
+    @pets = Pet.find(params[:id])
+    erb :'/petss/edit'
+  end
+
   patch '/pets/:id' do
     ####### bug fix
     if !params[:pet].keys.include?("pet_id")

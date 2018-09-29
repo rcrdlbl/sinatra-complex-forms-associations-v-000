@@ -30,6 +30,7 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do
+    @pet = Pet.find(params[:id])
     ####### bug fix
     if !params[:pet].keys.include?("owner_id")
     params[:pet]["owner_id"] = nil
